@@ -33,3 +33,7 @@ Route::get('/delete/{catalog}', 'CatalogController@destroy')->name('catalogs.des
 
 Route::get('/catalogs/tasks/create', 'TaskController@create')->name('tasks.create');
 Route::post('/catalogs/tasks/store', 'TaskController@store')->name('tasks.store');
+Route::get('/catalogs/tasks/{task}', 'TaskController@show')->name('tasks.show');
+Route::get('/catalogs/tasks/{task}/edit', 'TaskController@edit')->name('tasks.edit');
+Route::put('/update/tasks/{task}', 'TaskController@update')->name('tasks.update');
+Route::get('/delete/tasks/{task}', 'TaskController@delete')->name('tasks.delete');

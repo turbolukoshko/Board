@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Catalog;
+use App\Task;
 use Illuminate\Http\Request;
 
 class CatalogController extends Controller
@@ -30,7 +31,8 @@ class CatalogController extends Controller
     public function show($id)
     {
         $catalog = Catalog::findOrFail($id);
-        return view('catalog.show', compact('catalog'));
+        $tasks = $catalog->tasks;
+        return view('catalog.show', compact('catalog', 'tasks'));
     }
 
     public function edit($id)
